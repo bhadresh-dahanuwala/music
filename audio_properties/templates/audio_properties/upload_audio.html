@@ -1,0 +1,29 @@
+{% extends 'audio_properties/base.html' %}
+
+{% block content %}
+    <h3>Upload audio to change the properties</h3>
+    <form method="POST" enctype="multipart/form-data" id="id_frm_metadata">
+        {% csrf_token %}
+        <table id="id_tbl_audio_upload">
+            <tr>
+                <td>Audio File*</td>
+                <td>{{ form.audio_file }}</td>
+            </tr>
+            <tr>
+                <td>Title*</td>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <td>Singer(s)</td>
+                <td>{{ form.artist }}</td>
+            </tr>
+            <tr>
+                <td>Album / Movie</td>
+                <td>{{ form.album }}</td>
+            </tr>
+            <tr>
+                <td><button type="submit" id="id_btn_submit">Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+{% endblock %}
